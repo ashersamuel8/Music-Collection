@@ -8,11 +8,14 @@ public class CollectionManager {
 	private String inputString;
 	private StringTokenizer input;
 	String command;
+	private Collection library;
 
 	public void run() {
 		
 		System.out.println("Collection Manager starts running");
 		System.out.println();
+		
+		library = new Collection();
 		
 		do {
 		
@@ -45,8 +48,8 @@ public class CollectionManager {
 			
 			Album newAlbum = new Album(newTitle, newArtist, newGenre, newReleaseDate, true);
 			
-			if (Collection.find(newAlbum) == -1) { 
-				Collection.add(newAlbum);
+			if (!library.exists(newAlbum)) { 
+				library.add(newAlbum);
 			}
 			else {
 				System.out.println("Album already exists");
@@ -60,8 +63,8 @@ public class CollectionManager {
 			String artist = input.nextToken();
 			Album delAlbum = new Album(title, artist);
 			
-			if (Collection.find(delAlbum) != -1) {
-				Collection.remove(delAlbum);
+			if (library.exists(delAlbum)) {
+				library.remove(delAlbum);
 			}
 			else {
 				
@@ -77,11 +80,11 @@ public class CollectionManager {
 			String artist = input.nextToken();
 			Album lendAlbum = new Album(title, artist);
 			
-			if (Collection.find(lendAlbum) != -1) {
+			if (library.exists(lendAlbum)) {
 				
-				if (Collection.isAvailable(lendAlbum)) {
+				if (library.isAvailable(lendAlbum)) {
 					
-					Collection.lendingOut(lendAlbum);
+					library.lendingOut(lendAlbum);
 					System.out.println("Album Lent");
 				}
 				else {
@@ -102,11 +105,11 @@ public class CollectionManager {
 			String title = input.nextToken();
 			String artist = input.nextToken();
 			Album returningAlbum = new Album(title, artist);
-			if (Collection.find(returningAlbum) != -1) {
+			if (library.exists(returningAlbum)) {
 				
-				if (!Collection.isAvailable(returningAlbum)) {
+				if (!library.isAvailable(returningAlbum)) {
 					
-					Collection.returnAlbum(returningAlbum);
+					library.returnAlbum(returningAlbum);
 					System.out.println("Album returned");
 					
 				}
@@ -126,17 +129,17 @@ public class CollectionManager {
 		}
 		else if ( command.equals("P") ) {		//display collection without specifying the order
 			
-			Collection.print();
+			library.print();
 			
 		}
 		else if ( command.equals("PD") ) {		//display the collection sorted by the release dates
 			
-			Collection.printByReleaseDate();
+			library.printByReleaseDate();
 			
 		}
 		else if ( command.equals("PG") ) {		//display the collection sorted by the genres
 			
-			Collection.printByGenre():
+			library.printByGenre();
 			
 		}
 		else {
