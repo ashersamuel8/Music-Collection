@@ -53,14 +53,14 @@ public class Collection {
 		
 		if ( exists == false ) {
 		
-			if ( numAlbums == albums.length ) {
+			if ( numAlbums == albums.length && album.releaseDate.isValid() ) {
 			
 				grow();
 				numAlbums++;
 				albums[numAlbums] = album;
 			
 			}
-			else {
+			else if (album.releaseDate.isValid()) {
 				
 				numAlbums++;
 				albums[numAlbums] = album;
