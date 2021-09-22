@@ -6,6 +6,7 @@ public class Date implements Comparable<Date> {
 	private int year;
 	private int month;
 	private int day;
+
 	
 	private static final int QUADRENNIAL = 4;
 	private static final int CENTENNIAL = 100;

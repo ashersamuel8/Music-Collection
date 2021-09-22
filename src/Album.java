@@ -50,17 +50,35 @@ public class Album {
 		this.title = title;
 		this.artist = artist;
 	}
-	
-	public String getTitle(Album album) {
-		return album.title;
+	public String getTitle() {
+		
+		return this.title;
+		
 	}
-	
-	public String getArtist(Album album) {	
-		return album.artist;
+	public String getArtist() {
+		
+		return this.artist;
 	}
-	
-	public boolean getStatus(Album album) {	
-		return album.isAvailable;
+	public String getGenre() {
+		
+		return this.genre;
+		
+	}
+	public Date getReleaseDate() {
+		
+		return this.releaseDate;
+		
+	}
+	public boolean getStatus() {
+		
+		return this.isAvailable;
+		
+	}
+	public boolean setStatus(boolean status) {
+		
+		this.isAvailable = status;
+		
+		return status;
 	}
 	
 }
