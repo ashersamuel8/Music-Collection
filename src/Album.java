@@ -31,18 +31,35 @@ public class Album {
 			
 	}
 	
-	public String getTitle(Album album) {
+	public String getTitle() {
 		
-		return album.title;
+		return this.title;
 		
 	}
-	public String getArtist(Album album) {
+	public String getArtist() {
 		
-		return album.artist;
+		return this.artist;
 	}
-	public boolean getStatus(Album album) {
+	public String getGenre() {
 		
-		return album.isAvailable;
+		return this.genre;
+		
+	}
+	public Date getReleaseDate() {
+		
+		return this.releaseDate;
+		
+	}
+	public boolean getStatus() {
+		
+		return this.isAvailable;
+		
+	}
+	public boolean setStatus(boolean status) {
+		
+		this.isAvailable = status;
+		
+		return status;
 		
 	}
 	
