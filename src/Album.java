@@ -40,9 +40,16 @@ public class Album {
 		
 		return album.artist;
 	}
-	public boolean getStatus(Album album) {
+	public boolean getStatus() {
 		
-		return album.isAvailable;
+		return this.isAvailable;
+		
+	}
+	public boolean setStatus(boolean status) {
+		
+		this.isAvailable = status;
+		
+		return status;
 		
 	}
 	

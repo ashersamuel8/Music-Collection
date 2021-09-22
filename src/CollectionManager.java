@@ -8,7 +8,7 @@ public class CollectionManager {
 	private String inputString;
 	private StringTokenizer input;
 	String command;
-	private Collection library;
+	public static Collection library;
 
 	public void run() {
 		
@@ -48,8 +48,8 @@ public class CollectionManager {
 			
 			Album newAlbum = new Album(newTitle, newArtist, newGenre, newReleaseDate, true);
 			
-			if (!library.exists(newAlbum)) { 
-				library.add(newAlbum);
+			if (!library.add(newAlbum)) { 
+				System.out.println("Album Added");
 			}
 			else {
 				System.out.println("Album already exists");
@@ -63,8 +63,8 @@ public class CollectionManager {
 			String artist = input.nextToken();
 			Album delAlbum = new Album(title, artist);
 			
-			if (library.exists(delAlbum)) {
-				library.remove(delAlbum);
+			if (library.remove(delAlbum)) {
+				System.out.println("Album Removed");
 			}
 			else {
 				
@@ -80,11 +80,9 @@ public class CollectionManager {
 			String artist = input.nextToken();
 			Album lendAlbum = new Album(title, artist);
 			
-			if (library.exists(lendAlbum)) {
 				
-				if (library.isAvailable(lendAlbum)) {
+				if (library.lendingOut(lendAlbum)) {
 					
-					library.lendingOut(lendAlbum);
 					System.out.println("Album Lent");
 				}
 				else {
@@ -92,39 +90,25 @@ public class CollectionManager {
 					System.out.println("Album is not available; "
 							         + "please come back some other time");
 				}
-			}
-			else {
-				
-				System.out.println("Album Does Not Exist");
-				
-			}		
-			
 		}
+		
 		else if ( command.equals("R") ) {		//Return an Album
 			
 			String title = input.nextToken();
 			String artist = input.nextToken();
 			Album returningAlbum = new Album(title, artist);
-			if (library.exists(returningAlbum)) {
 				
-				if (!library.isAvailable(returningAlbum)) {
+				if (library.returnAlbum(returningAlbum)) {
 					
-					library.returnAlbum(returningAlbum);
 					System.out.println("Album returned");
 					
 				}
 				else {
 					
-					System.out.println("Album status: available; cannot return");
+					System.out.println("Wrong Album; Try agian");
 					
 				}
-				
-			}
-			else {
-				
-				System.out.println("Album Does not exist in the collection");
-			}
-			
+	
 			
 		}
 		else if ( command.equals("P") ) {		//display collection without specifying the order
