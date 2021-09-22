@@ -31,14 +31,24 @@ public class Album {
 			
 	}
 	
-	public String getTitle(Album album) {
+	public String getTitle() {
 		
-		return album.title;
+		return this.title;
 		
 	}
-	public String getArtist(Album album) {
+	public String getArtist() {
 		
-		return album.artist;
+		return this.artist;
+	}
+	public String getGenre() {
+		
+		return this.genre;
+		
+	}
+	public Date getReleaseDate() {
+		
+		return this.releaseDate;
+		
 	}
 	public boolean getStatus() {
 		

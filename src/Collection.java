@@ -7,7 +7,7 @@ public class Collection {
 	private int find(Album album) {		//find the album index, or return NOT_FOUND 
 		
 		int albumIndex = -1;
-		for (int i = 0; i < this.albums.length; i++ ) {
+		for (int i = 0; i < albums.length; i++ ) {
 			
 			if (album.equals(albums[i])) {
 				
@@ -23,15 +23,15 @@ public class Collection {
 	} 
 	private void grow() {				//increase the capacity of the array list by 4 
 		
-		Album[] buffArray = new Album[this.albums.length + 4];
+		Album[] buffArray = new Album[albums.length + 4];
 		
-		for (int i = 0; i < this.albums.length; i++) {
+		for (int i = 0; i < albums.length; i++) {
 			
-			buffArray[i] = this.albums[i];
+			buffArray[i] = albums[i];
 			
 		}
 		
-		this.albums = buffArray;
+		albums = buffArray;
 		
 		
 	} 
@@ -41,9 +41,9 @@ public class Collection {
 		
 		boolean exists = false;
 		
-		for ( int i = 0; i <= this.albums.length; i++) {
+		for ( int i = 0; i <= albums.length; i++) {
 			
-			if(this.albums[i].equals(album)) {
+			if(albums[i].equals(album)) {
 				exists = true;
 				break;
 			}
@@ -53,17 +53,17 @@ public class Collection {
 		
 		if ( exists == false ) {
 		
-			if ( this.numAlbums == this.albums.length ) {
+			if ( numAlbums == albums.length ) {
 			
-				this.grow();
-				this.numAlbums++;
-				albums[this.numAlbums] = album;
+				grow();
+				numAlbums++;
+				albums[numAlbums] = album;
 			
 			}
 			else {
 				
-				this.numAlbums++;
-				albums[this.numAlbums] = album;
+				numAlbums++;
+				albums[numAlbums] = album;
 				
 			}
 		}
@@ -77,9 +77,9 @@ public class Collection {
 		boolean exists = false;
 		int albumIndex = 0;
 		
-		for ( int i = 0; i < this.albums.length; i++ ) {
+		for ( int i = 0; i < albums.length; i++ ) {
 			
-			if( this.albums[i].equals(album)) {
+			if( albums[i].equals(album)) {
 				
 				exists = true;
 				albumIndex = i;
@@ -91,9 +91,9 @@ public class Collection {
 		
 		if (exists == true) {
 			
-			for (int i = albumIndex + 1; i < this.albums.length; i++ ) {
+			for (int i = albumIndex + 1; i < albums.length; i++ ) {
 				
-				this.albums[i-1] = this.albums[i];
+				albums[i-1] = albums[i];
 					
 			}	
 			
@@ -140,14 +140,58 @@ public class Collection {
 		}	
 		
 	} 								
-	public void printByReleaseDate() {}
-	public void printByGenre() {}
+	public void printByReleaseDate() {
+		
+		for( int i = 0; i < albums.length; i++ ) {
+			
+		    for( int j=0; j < albums.length - 1; j++ ) {
+		    	
+		        if( albums[j].getReleaseDate().compareTo(albums[j+1].getReleaseDate()) > 0 ) {
+		        	
+		            Album temp = albums[j];
+		            albums[j] = albums[j+1];
+		            albums[j+1] = temp;
+		       }
+		    }
+		}
+		
+		for (int i = 0; i < albums.length; i++) {
+			
+			System.out.println(albums[i].toString());
+			
+		}	
+		
+		
+	}
+	public void printByGenre() {
+		
+		
+		for( int i = 0; i < albums.length; i++ ) {
+			
+		    for( int j=0; j < albums.length - 1; j++ ) {
+		    	
+		        if( albums[j].getGenre().compareTo(albums[j+1].getGenre()) > 0 ) {
+		        	
+		            Album temp = albums[j];
+		            albums[j] = albums[j+1];
+		            albums[j+1] = temp;
+		       }
+		    }
+		}
+		
+		for (int i = 0; i < albums.length; i++) {
+			
+			System.out.println(albums[i].toString());
+			
+		}
+		
+	}
 
 
 	public Collection() {
 		
-		this.albums = new Album[4];
-		this.numAlbums = 0;
+		albums = new Album[4];
+		numAlbums = 0;
 		
 		
 	}
