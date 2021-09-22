@@ -2,17 +2,21 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 
+
 public class CollectionManager {
 	
 	private Scanner inputObj;
 	private String inputString;
 	private StringTokenizer input;
 	String command;
+	public static Collection library;
 
 	public void run() {
 		
 		System.out.println("Collection Manager starts running");
 		System.out.println();
+		
+		library = new Collection();
 		
 		do {
 		
@@ -40,13 +44,36 @@ public class CollectionManager {
 										
 			String newTitle = input.nextToken();
 			String newArtist = input.nextToken();
-			Genre newGenre = new genre(input.nextToken());
+			String newGenreString = input.nextToken();
 			Date newReleaseDate = new Date(input.nextToken());
+			
+			Genre newGenre;
+			
+			switch(newGenreString) {
+			
+			case "Classical":
+							newGenre = Genre.Classical;
+							break;
+			
+			case "Country":
+							newGenre = Genre.Country;
+							break;
+			case "Jazz":
+							newGenre = Genre.Jazz;
+							break;
+			
+			case "Pop": 
+							newGenre = Genre.Pop;
+							break;
+			
+			default:  		newGenre = Genre.Unknown;
+			
+			}
 			
 			Album newAlbum = new Album(newTitle, newArtist, newGenre, newReleaseDate, true);
 			
-			if (Collection.find(newAlbum) == -1) { 
-				Collection.add(newAlbum);
+			if (!library.add(newAlbum)) { 
+				System.out.println("Album Added");
 			}
 			else {
 				System.out.println("Album already exists");
@@ -60,8 +87,8 @@ public class CollectionManager {
 			String artist = input.nextToken();
 			Album delAlbum = new Album(title, artist);
 			
-			if (Collection.find(delAlbum) != -1) {
-				Collection.remove(delAlbum);
+			if (library.remove(delAlbum)) {
+				System.out.println("Album Removed");
 			}
 			else {
 				
@@ -77,11 +104,9 @@ public class CollectionManager {
 			String artist = input.nextToken();
 			Album lendAlbum = new Album(title, artist);
 			
-			if (Collection.find(lendAlbum) != -1) {
 				
-				if (Collection.isAvailable(lendAlbum)) {
+				if (library.lendingOut(lendAlbum)) {
 					
-					Collection.lendingOut(lendAlbum);
 					System.out.println("Album Lent");
 				}
 				else {
@@ -89,54 +114,40 @@ public class CollectionManager {
 					System.out.println("Album is not available; "
 							         + "please come back some other time");
 				}
-			}
-			else {
-				
-				System.out.println("Album Does Not Exist");
-				
-			}		
-			
 		}
+		
 		else if ( command.equals("R") ) {		//Return an Album
 			
 			String title = input.nextToken();
 			String artist = input.nextToken();
 			Album returningAlbum = new Album(title, artist);
-			if (Collection.find(returningAlbum) != -1) {
 				
-				if (!Collection.isAvailable(returningAlbum)) {
+				if (library.returnAlbum(returningAlbum)) {
 					
-					Collection.returnAlbum(returningAlbum);
 					System.out.println("Album returned");
 					
 				}
 				else {
 					
-					System.out.println("Album status: available; cannot return");
+					System.out.println("Wrong Album; Try agian");
 					
 				}
-				
-			}
-			else {
-				
-				System.out.println("Album Does not exist in the collection");
-			}
-			
+	
 			
 		}
 		else if ( command.equals("P") ) {		//display collection without specifying the order
 			
-			Collection.print();
+			library.print();
 			
 		}
 		else if ( command.equals("PD") ) {		//display the collection sorted by the release dates
 			
-			Collection.printByReleaseDate();
+			library.printByReleaseDate();
 			
 		}
 		else if ( command.equals("PG") ) {		//display the collection sorted by the genres
 			
-			Collection.printByGenre():
+			library.printByGenre();
 			
 		}
 		else {
