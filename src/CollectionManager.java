@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 
+
 public class CollectionManager {
 	
 	private Scanner inputObj;
@@ -43,8 +44,31 @@ public class CollectionManager {
 										
 			String newTitle = input.nextToken();
 			String newArtist = input.nextToken();
-			Genre newGenre = new genre(input.nextToken());
+			String newGenreString = input.nextToken();
 			Date newReleaseDate = new Date(input.nextToken());
+			
+			Genre newGenre;
+			
+			switch(newGenreString) {
+			
+			case "Classical":
+							newGenre = Genre.Classical;
+							break;
+			
+			case "Country":
+							newGenre = Genre.Country;
+							break;
+			case "Jazz":
+							newGenre = Genre.Jazz;
+							break;
+			
+			case "Pop": 
+							newGenre = Genre.Pop;
+							break;
+			
+			default:  		newGenre = Genre.Unknown;
+			
+			}
 			
 			Album newAlbum = new Album(newTitle, newArtist, newGenre, newReleaseDate, true);
 			

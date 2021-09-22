@@ -7,9 +7,9 @@ public class Album {
 	private Date releaseDate;
 	private boolean isAvailable; 
 	
-	enum Genre {
-        Classical, Country, Jazz, Pop, Unknown;
-    }
+//	public enum Genre {
+//        Classical, Country, Jazz, Pop, Unknown;
+//    }
 	
 	@Override
 	public boolean equals(Object obj) { 
@@ -59,7 +59,7 @@ public class Album {
 		
 		return this.artist;
 	}
-	public String getGenre() {
+	public Genre getGenre() {
 		
 		return this.genre;
 		
