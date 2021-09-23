@@ -13,6 +13,7 @@ public class Album {
 	
 	@Override
 	public boolean equals(Object obj) { 
+		
 		if (obj instanceof Album) {
 			Album tempAlbum = (Album) obj;
 			

@@ -41,7 +41,10 @@ public class Collection {
 		
 		boolean exists = false;
 		
-		for ( int i = 0; i <= albums.length; i++) {
+		
+		for (int i = 0; i < albums.length; i++) {
+			
+			if (albums[i] == null) break;
 			
 			if(albums[i].equals(album)) {
 				exists = true;
@@ -56,14 +59,14 @@ public class Collection {
 			if ( numAlbums == albums.length && album.getReleaseDate().isValid() ) {
 			
 				grow();
-				numAlbums++;
 				albums[numAlbums] = album;
+				numAlbums++;
 			
 			}
 			else if (album.getReleaseDate().isValid()) {
 				
-				numAlbums++;
 				albums[numAlbums] = album;
+				numAlbums++;
 				
 			}
 		}
@@ -78,6 +81,8 @@ public class Collection {
 		int albumIndex = 0;
 		
 		for ( int i = 0; i < albums.length; i++ ) {
+			
+			if ( albums[i] == null ) break;
 			
 			if( albums[i].equals(album)) {
 				
@@ -133,7 +138,9 @@ public class Collection {
 	} 
 	public void print() {								//display the list without specifying the order 
 		
-		for (int i = 0; i < numAlbums; i++) {
+		for(int i = 0; i < albums.length; i++) {
+			
+			if (albums[i] == null) break;
 			
 			System.out.println(albums[i].toString());	
 			

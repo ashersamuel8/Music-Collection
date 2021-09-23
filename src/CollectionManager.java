@@ -138,6 +138,7 @@ public class CollectionManager {
 		else if ( command.equals("P") ) {		//display collection without specifying the order
 			
 			library.print();
+//			System.out.print("1");
 			
 		}
 		else if ( command.equals("PD") ) {		//display the collection sorted by the release dates
