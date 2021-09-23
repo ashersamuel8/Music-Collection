@@ -27,7 +27,7 @@ public class Album {
 	public String toString() { 
 		final String buffer = "::"; 
 		
-		String tempString = this.title + buffer + this.artist + buffer + this.genre + buffer + this.releaseDate.toString() + buffer;
+		String tempString = this.title + buffer + this.artist + buffer + this.genre + buffer + releaseDate.toString() + buffer;
 		
 		if (this.isAvailable) {
 			tempString += "is available";

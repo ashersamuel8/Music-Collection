@@ -120,4 +120,10 @@ public class Date implements Comparable<Date> {
 
 		return 1;
 	}
+	
+	public String toString() {
+		
+		return month + "/" + day + "/" + year;
+		
+	}
 }
