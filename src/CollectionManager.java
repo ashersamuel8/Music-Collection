@@ -72,7 +72,10 @@ public class CollectionManager {
 			
 			Album newAlbum = new Album(newTitle, newArtist, newGenre, newReleaseDate, true);
 			
-			if (!library.add(newAlbum)) { 
+			if(!newReleaseDate.isValid()) {
+				System.out.println("Enter Valid Release Date");
+			}
+			else if (!library.add(newAlbum)) { 
 				System.out.println("Album Added");
 			}
 			else {

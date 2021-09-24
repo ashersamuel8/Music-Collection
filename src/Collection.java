@@ -9,6 +9,8 @@ public class Collection {
 		int albumIndex = -1;
 		for (int i = 0; i < albums.length; i++ ) {
 			
+			if (albums[i] == null) break;
+			
 			if (album.equals(albums[i])) {
 				
 				albumIndex = i;
@@ -56,19 +58,20 @@ public class Collection {
 		
 		if ( exists == false ) {
 		
-			if ( numAlbums == albums.length && album.getReleaseDate().isValid() ) {
+			if ( numAlbums == albums.length ) {
 			
 				grow();
 				albums[numAlbums] = album;
 				numAlbums++;
 			
 			}
-			else if (album.getReleaseDate().isValid()) {
+			else {
 				
 				albums[numAlbums] = album;
 				numAlbums++;
 				
 			}
+			
 		}
 		
 		return exists;
@@ -101,6 +104,7 @@ public class Collection {
 				albums[i-1] = albums[i];
 					
 			}	
+			numAlbums--;
 			
 		}
 		
@@ -126,7 +130,9 @@ public class Collection {
 		
 		int albumIndex = find(album);
 		
-		if(albumIndex != -1 || albums[albumIndex].getStatus() == true) return false;
+		if(albumIndex == -1) return false;
+		
+		if (albums[albumIndex].getStatus() == true) return false;
 		
 		else {
 			
@@ -146,12 +152,18 @@ public class Collection {
 			
 		}	
 		
+		if (albums[0] == null ) System.out.println("Library is Empty");
+		
 	} 								
 	public void printByReleaseDate() {
 		
 		for( int i = 0; i < albums.length; i++ ) {
 			
+			if (albums[i] == null) break;
+			
 		    for( int j=0; j < albums.length - 1; j++ ) {
+		    	
+		    	if(albums[j] == null || albums[j+1] == null) break;
 		    	
 		        if( albums[j].getReleaseDate().compareTo(albums[j+1].getReleaseDate()) > 0 ) {
 		        	
@@ -164,9 +176,13 @@ public class Collection {
 		
 		for (int i = 0; i < albums.length; i++) {
 			
+			if (albums[i] == null) break;
+			
 			System.out.println(albums[i].toString());
 			
 		}	
+		
+		if (albums[0] == null ) System.out.println("Library is Empty");
 		
 		
 	}
@@ -175,7 +191,11 @@ public class Collection {
 		
 		for( int i = 0; i < albums.length; i++ ) {
 			
+			if (albums[i] == null) break;
+			
 		    for( int j=0; j < albums.length - 1; j++ ) {
+		    	
+		    	if(albums[j] == null || albums[j+1] == null) break;
 		    	
 		        if( albums[j].getGenre().compareTo(albums[j+1].getGenre()) > 0 ) {
 		        	
@@ -184,13 +204,18 @@ public class Collection {
 		            albums[j+1] = temp;
 		       }
 		    }
+		    
 		}
 		
 		for (int i = 0; i < albums.length; i++) {
 			
+			if (albums[i] == null) break;
+			
 			System.out.println(albums[i].toString());
 			
 		}
+		
+		if (albums[0] == null ) System.out.println("Library is Empty");
 		
 	}
 
