@@ -173,18 +173,18 @@ public class Date implements Comparable<Date> {
 		
 
 		
-		String[] testDates = { "10/20/1979", "10/20/2022", "0/20/2020", "13/20/2020", "1/32/2020", 
-							"1/0/2020", "1/31/2020", "4/31/2020", "4/0/2020", "4/30/2020", "2/29/2020",
-							"2/30/2020", "2/28/2019", "2/29/2019" };
+		String[] testDates = { "10/20/1979", "10/20/2022", "00/20/2020", "13/20/2020", "01/32/2020", 
+							"01/00/2020", "01/31/2020", "04/31/2020", "04/00/2020", "04/30/2020", "02/29/2020",
+							"02/30/2020", "02/28/2019", "02/29/2019" };
 		
 		for (int i = 0; i < testDates.length; i++) {
 			
 			if(new Date(testDates[i]).isValid()){
-				System.out.println("Date: " + testDates[i] + " :: Valid: True");
+				System.out.println("Date: " + testDates[i] + "\t Valid: True");
 				
 			}
 			else {
-				System.out.println("Date: " + testDates[i] + " :: Valid: False");
+				System.out.println("Date: " + testDates[i] + "\t Valid: False");
 
 			}
 			
