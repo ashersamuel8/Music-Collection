@@ -18,7 +18,7 @@ public class CollectionManager {
 		
 		library = new Collection();
 		
-		do {
+		while(true) {
 		
 		 inputObj = new Scanner(System.in);			//Scanner Input Object
 		
@@ -27,11 +27,13 @@ public class CollectionManager {
 		 input = new StringTokenizer(inputString, ",");		//inputString is Tokenized;
 		 													//input is Tokenized Object
 		 command = input.nextToken();
+			
+		 if(command.equals("Q")) break;
 		 
 		 readInput();
 		 
 		 
-		} while(!command.equals("Q"));
+		} 
 		
 		System.out.println("Collection Manager Terminated");		
 		
