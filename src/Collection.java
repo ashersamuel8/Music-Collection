@@ -194,11 +194,11 @@ public class Collection {
 	public void print() {	
 		
 		if (albums[0] == null ) {
-			System.out.println("Collection is Empty");
+			System.out.println("The collection is empty!");
 			return;
 		}
 		
-		System.out.println("*List of albums in the Collection.");
+		System.out.println("*List of albums in the collection.");
 		
 		for(int i = 0; i < albums.length; i++) {
 			
@@ -219,7 +219,7 @@ public class Collection {
 	public void printByReleaseDate() {
 		
 		if (albums[0] == null ) {
-			System.out.println("Collection is empty");
+			System.out.println("The collection is empty!");
 			return;
 		}
 		
@@ -241,7 +241,7 @@ public class Collection {
 		    }
 		}
 		
-		System.out.println("*Album Collection by release dates.");
+		System.out.println("*Album collection by the release dates.");
 		
 		//Prints out the albums array list
 		for (int i = 0; i < albums.length; i++) {
@@ -264,11 +264,11 @@ public class Collection {
 	public void printByGenre() {
 		
 		if (albums[0] == null ) {
-			System.out.println("Collection is Empty");
+			System.out.println("The collection is empty!");
 			return;
 		}
 		
-		System.out.println("*Album Collection by genre.");
+		System.out.println("*Album collection by genre.");
 		
 		//Sorts the albums Array List by Genre
 		for( int i = 0; i < albums.length; i++ ) {

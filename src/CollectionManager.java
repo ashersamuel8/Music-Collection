@@ -22,7 +22,7 @@ public class CollectionManager {
 	 */
 	public void run() {
 		
-		System.out.println("Collection Manager starts running");
+		System.out.println("Collection Manager starts running.");
 		System.out.println();
 		
 		collection = new Collection();
@@ -95,7 +95,7 @@ public class CollectionManager {
 		
 		default:
 			
-			System.out.println("Invalid Command!");
+			System.out.println("Invalid command!");
 			
 		}
 		
@@ -147,10 +147,10 @@ public class CollectionManager {
 		
 		//Adds the new album to the collection
 		if (collection.add(newAlbum)) { 
-			System.out.println(newAlbum.toString() + " >> added");
+			System.out.println(newAlbum.toString() + " >> added.");
 		}
 		else {
-			System.out.println(newAlbum.toString() + " >> is already in the collection");
+			System.out.println(newAlbum.toString() + " >> is already in the collection.");
 		}
 		
 		return;
@@ -169,10 +169,10 @@ public class CollectionManager {
 		Album delAlbum = new Album(title, artist);
 		
 		if (collection.remove(delAlbum)) {
-			System.out.println(title + "::" + artist + " >> deleted");
+			System.out.println(title + "::" + artist + " >> deleted.");
 		}
 		else {
-			System.out.println(title + "::" + artist + " >> is not in the collection");
+			System.out.println(title + "::" + artist + " >> is not in the collection.");
 		}
 		
 		return;
@@ -191,10 +191,10 @@ public class CollectionManager {
 		
 			
 			if (collection.lendingOut(lendAlbum)) {
-				System.out.println(title + "::" + artist + " >> lending out and set to not available");
+				System.out.println(title + "::" + artist + " >> lending out and set to not available.");
 			}
 			else {
-				System.out.println(title + "::" + artist + " >> is not available");
+				System.out.println(title + "::" + artist + " >> is not available.");
 			}
 	}
 	
@@ -209,10 +209,10 @@ public class CollectionManager {
 		Album returningAlbum = new Album(title, artist);
 			
 			if (collection.returnAlbum(returningAlbum)) {
-				System.out.println(title + "::" + artist + " >> returing and set to available");
+				System.out.println(title + "::" + artist + " >> returing and set to available.");
 			}
 			else {
-				System.out.println(title + "::" + artist + " >> return cannot be completed");
+				System.out.println(title + "::" + artist + " >> return cannot be completed.");
 			}
 		
 	}	
