@@ -1,13 +1,12 @@
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
 /**
  * This class is the user interface class that handles reads the input commands of the client 
  * and requests the appropriate functions to be performed
  * @author Bhavya Patel
  * @author Samuel Asher Kappala
  */
-
-import java.util.Scanner;
-import java.util.StringTokenizer;
-
 public class CollectionManager {
 	
 	private Scanner inputObj;				//Scanner object to store the input

@@ -1,12 +1,11 @@
-/**
- * This class defines the date object, and it also contains several methods to interact with these date objects.
- * @author Bhavya Patel
- * @author Samuel Asher Kappala
- */
-
 import java.util.Calendar;
 import java.util.StringTokenizer;
 
+/**
+ *This class defines the date object, and it also contains several methods to interact with these date objects.
+ * @author Bhavya Patel
+ * @author Samuel Asher Kappala
+ */
 public class Date implements Comparable<Date> {
 
 	private int year;
