@@ -28,7 +28,7 @@ public class CollectionManager {
 		collection = new Collection();
 		
 		//Loop that keeps running until command is "Q"
-		do {
+		while(true) {
 			
 			try {	
 			
@@ -41,7 +41,9 @@ public class CollectionManager {
 		 		
 				//gets the input command
 				command = input.nextToken();
-		 
+		 		
+				if(command.equals("Q")) break;
+				
 				readInput();
 		 
 			} catch(Exception e){
@@ -50,7 +52,7 @@ public class CollectionManager {
 			
 			}
 		 
-		} while(!command.equals("Q"));
+		} 
 		
 		System.out.println("Collection Manager Terminated");		
 		
