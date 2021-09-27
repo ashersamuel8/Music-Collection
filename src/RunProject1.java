@@ -5,7 +5,10 @@
  */
 
 public class RunProject1 {
-	
+	/**
+	 * Main Method
+	 * @param args
+	 */
 	public static void main (String args[]) {
 		
 		new CollectionManager().run();
