@@ -170,79 +170,104 @@ public class Date implements Comparable<Date> {
 	 */
 	public static void main(String[] args) {
 		
-		String[] testDates = { "10/20/1979", "10/20/2022", "00/20/2020", "13/20/2020", "01/32/2020", 
-							"01/00/2020", "01/31/2020", "04/31/2020", "04/00/2020", "04/30/2020", "02/29/2020",
-							"02/30/2020", "02/28/2019", "02/29/2019" };
 		
-		// test case 1
-		for (int i = 0; i < 1; i++) {
-			if(new Date(testDates[i]).isValid()){
-				System.out.println("Date: " + testDates[i] + "\t Valid: True");	
-			}
-			else {
-				System.out.println("Date: " + testDates[i] + "\t Valid: False");
-			}
+		
+		// Test Case 1
+		if(new Date("10/20/1979").isValid()) {
+			System.out.println("10/20/1979: Test passed.");
 		}
-		
-		// test case 2
-		for (int i = 1; i < 2; i++) {
-			if(new Date(testDates[i]).isValid()){
-				System.out.println("Date: " + testDates[i] + "\t Valid: True");	
-			}
-			else {
-				System.out.println("Date: " + testDates[i] + "\t Valid: False");
-			}
-		}
-		
-		// test case 3
-		for (int i = 2; i < 4; i++) {
-			if(new Date(testDates[i]).isValid()){
-				System.out.println("Date: " + testDates[i] + "\t Valid: True");	
-			}
-			else {
-				System.out.println("Date: " + testDates[i] + "\t Valid: False");
-			}
-		}
-		
-		// test case 4
-		for (int i = 4; i < 7; i++) {
-			if(new Date(testDates[i]).isValid()){
-				System.out.println("Date: " + testDates[i] + "\t Valid: True");	
-			}
-			else {
-				System.out.println("Date: " + testDates[i] + "\t Valid: False");
-			}
+		else {
+			System.out.println("10/20/1979: Test failed.");
 		}
 
-		// test case 5
-		for (int i = 7; i < 10; i++) {
-			if(new Date(testDates[i]).isValid()){
-				System.out.println("Date: " + testDates[i] + "\t Valid: True");	
-			}
-			else {
-				System.out.println("Date: " + testDates[i] + "\t Valid: False");
-			}
+		// Test Case 2
+		if(new Date("10/20/2022").isValid()) {
+			System.out.println("10/20/2022: Test passed.");
 		}
-		
-		// test case 6
-		for (int i = 10; i < 12; i++) {
-			if(new Date(testDates[i]).isValid()){
-				System.out.println("Date: " + testDates[i] + "\t Valid: True");	
-			}
-			else {
-				System.out.println("Date: " + testDates[i] + "\t Valid: False");
-			}
+		else {
+			System.out.println("10/20/2022: Test failed.");
 		}
-		
-		// test case 7
-		for (int i = 12; i < testDates.length; i++) {
-			if(new Date(testDates[i]).isValid()){
-				System.out.println("Date: " + testDates[i] + "\t Valid: True");	
-			}
-			else {
-				System.out.println("Date: " + testDates[i] + "\t Valid: False");
-			}
+
+		// Test Case 3
+		if(new Date("0/20/2020").isValid()) {
+			System.out.println("0/20/2020: Test passed.");
 		}
-		
+		else {
+			System.out.println("0/20/2020: Test failed.");
+		}
+		if(new Date("13/20/2020").isValid()) {
+			System.out.println("13/20/2020: Test passed.");
+		}
+		else {
+			System.out.println("13/20/2020: Test failed.");
+		}
+
+		// Test Case 4
+		if(new Date("1/32/2020").isValid()) {
+			System.out.println("1/32/2020: Test passed.");
+		}
+		else {
+			System.out.println("1/32/2020: Test failed.");
+		}
+		if(new Date("1/0/2020").isValid()) {
+			System.out.println("1/0/2020: Test passed.");
+		}
+		else {
+			System.out.println("1/0/2020: Test failed.");
+		}
+		if(new Date("1/31/2020").isValid()) {
+			System.out.println("1/31/2020: Test passed.");
+		}
+		else {
+			System.out.println("1/31/2020: Test failed.");
+		}
+
+		// Test Case 5
+		if(new Date("4/31/2020").isValid()) {
+			System.out.println("4/31/2020: Test passed.");
+		}
+		else {
+			System.out.println("4/31/2020: Test failed.");
+		}
+		if(new Date("4/0/2020").isValid()) {
+			System.out.println("4/0/2020: Test passed.");
+		}
+		else {
+			System.out.println("4/0/2020: Test failed.");
+		}
+		if(new Date("4/30/2020").isValid()) {
+			System.out.println("4/30/2020: Test passed.");
+		}
+		else {
+			System.out.println("4/30/2020: Test failed.");
+		}
+
+		// Test Case 6
+		if(new Date("2/29/2020").isValid()) {
+			System.out.println("2/29/2020: Test passed.");
+		}
+		else {
+			System.out.println("2/29/2020: Test failed.");
+		}
+		if(!new Date("2/30/2020").isValid()) {
+			System.out.println("2/30/2020: Test passed.");
+		}
+		else {
+			System.out.println("2/30/2020: Test failed.");
+		}
+
+		// Test Case 7
+		if(new Date("2/28/2019").isValid()) {
+			System.out.println("2/28/2019: Test passed.");
+		}
+		else {
+			System.out.println("2/28/2019: Test failed.");
+		}
+		if(new Date("2/29/2019").isValid()) {
+			System.out.println("2/29/2019: Test passed.");
+		}
+		else {
+			System.out.println("2/29/2019: Test failed.");
+		}
 	}
 }
