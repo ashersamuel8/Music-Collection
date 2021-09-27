@@ -249,7 +249,7 @@ public class Date implements Comparable<Date> {
 		else {
 			System.out.println("2/29/2020: Test failed.");
 		}
-		if(!new Date("2/30/2020").isValid()) {
+		if(new Date("2/30/2020").isValid()) {
 			System.out.println("2/30/2020: Test passed.");
 		}
 		else {

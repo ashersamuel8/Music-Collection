@@ -55,6 +55,7 @@ public class Collection {
 	/**
 	 * A method to add an album to the Collection. This method checks if the album already
 	 * exists in the albums array list. If the album already exists, the new album is not added. 
+	 * if albums array list is full, it calls grow() function to increase the size.
 	 * @param takes an album to be added to the Collection
 	 * @return true if the album is added, false otherwise
 	 */

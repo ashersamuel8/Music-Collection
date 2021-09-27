@@ -59,7 +59,7 @@ public class CollectionManager {
 	}
 	
 	/**
-	 * A private method that handles necessary functions (add, remove, lend, return, print) 
+	 * This private method handles necessary functions (add, remove, lend, return, print) 
 	 * to be called as per the command
 	 */
 	private void readInput(){
@@ -105,7 +105,7 @@ public class CollectionManager {
 	}
 	
 	/**
-	 * A private method that creates an Album object
+	 * Creates an Album object
 	 * and checks if the input attributes are valid to add the album to
 	 * the collection. 
 	 * Calls Collection.add(Album album) from the Collection class. 
@@ -160,7 +160,7 @@ public class CollectionManager {
 	}
 	
 	/**
-	 * Creates an new temporary album object with the input attributes and passes them to 
+	 * Creates a new temporary album object with the input attributes and passes them to 
 	 * Collection.remove(Album album) method to remove the album from the collection
 	 */
 	private void deleteCommand() {
